@@ -20,9 +20,12 @@
     "npm": "Please use yarn instead"
   },
   "dependencies": {
-    "jsdom": "^19.0.0"
+    "express": "^4.18.1",
+    "jsdom": "^19.0.0",
+    "node-html-to-image": "^3.2.4"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/jsdom": "^16.2.14",
     "@types/node": "16",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
