@@ -7,7 +7,14 @@
   "scripts": {
     "lint": "eslint --ignore-path .gitignore src/**/*.{js,ts}",
     "lint:fix": "eslint --ignore-path .gitignore src/**/*.{js,ts} --fix",
-    "format": "prettier --write src/**/*.{js,ts}"
+    "format": "prettier --write src/**/*.{js,ts}",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts}": [
+      "yarn lint:fix",
+      "yarn format"
+    ]
   },
   "engines": {
     "npm": "Please use yarn instead"
@@ -16,6 +23,8 @@
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
     "eslint": "^8.16.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.0",
     "prettier": "^2.6.2"
   }
 }
