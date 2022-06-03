@@ -7,6 +7,7 @@ import { join } from "path";
 import ogp from "./ogp";
 
 const app: Application = express();
+const port = process.env.PORT || 3000;
 
 const htmlPath = join(process.cwd(), "public", "html");
 const indexHTML = fs.readFileSync(join(htmlPath, "index.html"), "utf-8");
@@ -28,6 +29,6 @@ app.use((req: Request, res: Response) => {
   res.status(404).send(indexHTML);
 });
 
-app.listen(3000, () => {
-  console.log("listening on port 3000");
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
 });
