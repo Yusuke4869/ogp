@@ -4,6 +4,9 @@
   "description": "Open Graph Image Generation",
   "author": "Yusuke4869",
   "license": "MIT",
+  "scripts": {
+    "format": "prettier --write src/**/*.{js,ts}"
+  },
   "engines": {
     "npm": "Please use yarn instead"
   },
