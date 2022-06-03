@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Graph Image Generation Generation</title>
+  <meta property="og:title" content="Open Graph Image Generation" />
+  <meta property="og:description" content="Open Graph Image Generation created by Yusuke4869" />
+  <meta property="og:image" content="https://ogp.yusuke4869.dev/img/Open%20Graph%20Image%20Generation" />
+  <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body class="h-screen">
+  <h1 class="text-xl md:text-4xl font-bold	flex justify-center justify-items-center py-10">Open Graph Image Generation</h1>
+  <div class="flex justify-center justify-items-center pb-5">
+    <a href="https://github.com/Yusuke4869/ogp" target="_blank" rel="noopener noreferrer">https://github.com/Yusuke4869/ogp</a>
+  </div>
+  <div>
+    <div class="py-2">
+      <p class="flex justify-center justify-items-center py-2">Title</p>
+      <div class="flex justify-center justify-items-center">
+        <input id="title" class="mx-auto text-center border-solid border-2 rounded-md w-[20rem] h-12" type="text" onchange="changeImg()">
+      </div>
+    </div>
+    <div class="py-2">
+      <p class="flex justify-center justify-items-center py-2">Color</p>
+      <div class="flex justify-center justify-items-center">
+        <input id="color" class="border-solid border-2 rounded-md w-[20rem] h-12" type="color" onchange="changeImg()">
+      </div>
+    </div>
+    <div class="py-2">
+      <p class="flex justify-center justify-items-center py-2">Background Image URL</p>
+      <div class="flex justify-center justify-items-center">
+        <input id="url" class="border-solid border-2 rounded-md w-[20rem] h-12" type="url" onchange="changeImg()">
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-center justify-items-center py-5">
+    <img id="ogp" class="w-11/12 md:w-1/2 border-dotted border-2" src="">
+  </div>
+  <p class="flex justify-center justify-items-center py-5">&copy; 2022 Yusuke4869</p>
+  <script>
+    $("#title").val("Hello World");
+    const ogpURL = `${location.protocol}//${location.host}`;
+    $("#ogp").attr("src", `${ogpURL}/img/Hello%20World`);
+
+    function changeImg() {
+      const title = $("#title").val();
+      const color = $("#color").val();
+      const url = $("#url").val();
+      $("#ogp").attr("src", `${ogpURL}/img/${title}?color=${color.replace("#", "")}&img=${url}`);
+    }
+  </script>
+</body>
+</html>
