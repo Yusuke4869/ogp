@@ -5,6 +5,8 @@
   "author": "Yusuke4869",
   "license": "MIT",
   "scripts": {
+    "lint": "eslint --ignore-path .gitignore src/**/*.{js,ts}",
+    "lint:fix": "eslint --ignore-path .gitignore src/**/*.{js,ts} --fix",
     "format": "prettier --write src/**/*.{js,ts}"
   },
   "engines": {
